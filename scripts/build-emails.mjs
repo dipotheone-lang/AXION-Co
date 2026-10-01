@@ -20,6 +20,10 @@ import {
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ASSET_BASE = process.env.ASSET_BASE || '../assets/email';
+// ESPs replace the placeholder with their merge tag. For direct Gmail sends,
+// rebuild with a mailto so the link still works:
+//   UNSUBSCRIBE_URL='mailto:axion426@gmail.com?subject=Unsubscribe' npm run build:emails
+const UNSUBSCRIBE_URL = process.env.UNSUBSCRIBE_URL || '{{UNSUBSCRIBE_URL}}';
 
 const colorName = { '#F6F0EA': 'cream', '#123F6E': 'navy', '#E58A2D': 'orange' };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -216,7 +220,7 @@ ${gridSection}
           <div style="font:400 12px ${ARCHIVO};color:${brand.cream};margin-top:4px">${brand.address}</div>
         </td>
         <td align="right" valign="middle" style="padding:20px 32px 20px 0">
-          <a href="{{UNSUBSCRIBE_URL}}" style="font:400 12px ${ARCHIVO};color:${brand.cream};text-decoration:underline">Unsubscribe</a>
+          <a href="${UNSUBSCRIBE_URL}" style="font:400 12px ${ARCHIVO};color:${brand.cream};text-decoration:underline">Unsubscribe</a>
         </td>
       </tr>
     </table>

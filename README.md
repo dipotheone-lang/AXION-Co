@@ -70,3 +70,30 @@ with `CHROMIUM_PATH=/path/to/chromium`.
 Cadence (from the campaign plan): 2×/week, Mon + Wed 09:30 Cairo,
 Current-then-Potential stagger; repliers routed to Mohamed within 2 hours,
 bounces/repliers excluded from subsequent sends.
+
+## Sending recommendations
+
+For the full 401-contact run, in order of preference:
+
+1. **Use an ESP** (Brevo, Mailchimp, HubSpot, …). It provides what the
+   campaign plan requires and plain Gmail does not: a one-click unsubscribe
+   link mapped to `{{UNSUBSCRIBE_URL}}`, automatic bounce exclusion,
+   scheduled Mon + Wed 09:30 Cairo sends, and open/click tracking per
+   episode. Import the HTML from `emails/` as custom-code templates.
+2. **If sending directly from Gmail** (axion426@gmail.com):
+   - Rebuild with a working unsubscribe link:
+     `UNSUBSCRIBE_URL='mailto:axion426@gmail.com?subject=Unsubscribe' npm run build:emails`
+     and process those unsubscribe requests manually before every send.
+   - Keep batches small — 50–80 recipients per day, always BCC, never one
+     giant send. A 400-recipient blast from a plain Gmail address is the
+     fastest way to get the account spam-flagged.
+   - Warm up: start with the Current-clients segment (existing senders'
+     reputation), then Potential.
+   - Remove bounces and repliers from the list by hand after each episode;
+     route every reply to Mohamed within 2 hours.
+   - Expect Gmail's own ~500 recipients/day limit; the stagger plan stays
+     well under it.
+3. **Either way**: send each episode to yourself first and check rendering
+   in Gmail, Outlook and a phone before the batch goes out; keep the
+   episode order and the 2×/week rhythm — the escalating CTAs
+   (reply → WhatsApp → cart/vendor → full list) assume it.
