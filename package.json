@@ -1,0 +1,17 @@
+{
+  "name": "axion-if-it-exists-campaign",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AXION \"If It Exists\" campaign — email season, key visual and LinkedIn cards",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:web && npm run build:emails",
+    "build:web": "node scripts/build-web.mjs",
+    "build:emails": "node scripts/build-emails.mjs",
+    "export": "node scripts/export-assets.mjs",
+    "serve": "npx --yes http-server -p 8080 -c-1 ."
+  },
+  "devDependencies": {
+    "playwright-core": "^1.49.0"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXION · "If It Exists" campaign</title>
+<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<style>
+  body{margin:0;background:#E9E2DA;font-family:'Archivo',sans-serif;color:#123F6E;padding:56px;max-width:960px}
+  h1{font:400 64px/0.95 'Anton',sans-serif;margin:0 0 6px;color:#123F6E}
+  h1 span{color:#E58A2D}
+  .sub{font:700 13px 'Archivo';letter-spacing:.14em;text-transform:uppercase;margin-bottom:40px}
+  h2{font:700 13px 'Archivo';letter-spacing:.14em;text-transform:uppercase;border-top:3px solid #123F6E;padding-top:14px;margin:36px 0 12px}
+  a{color:#1C5A9E;font-weight:700;text-decoration:none}
+  a:hover{color:#E58A2D}
+  ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips a{background:#123F6E;color:#F6F0EA;padding:10px 14px;font:900 13px 'Archivo';text-transform:uppercase}
+  .chips a:hover{background:#E58A2D;color:#123F6E}
+  p{font:400 15px/1.5 'Archivo';max-width:620px}
+  code{background:#fff;padding:1px 5px}
+</style>
+</head>
+<body>
+<h1>IF IT EXISTS.<br><span>WE CAN SUPPLY IT.</span></h1>
+<div class="sub">AXION · 10 proofs · one season · جرّب تغلبنا</div>
+
+<h2>01 · Campaign key visual · 1200×628</h2>
+<ul><li><a href="key-visual.html">key-visual.html</a> &nbsp;·&nbsp; PNG export in <code>exports/key-visual.png</code></li></ul>
+
+<h2>02–11 · Email season · 10 episodes · 600px</h2>
+<div class="chips">
+  <a href="../emails/episode-01.html">Ep 1 · The dare</a>
+  <a href="../emails/episode-02.html">Ep 2 · Flow</a>
+  <a href="../emails/episode-03.html">Ep 3 · Rotation</a>
+  <a href="../emails/episode-04.html">Ep 4 · Power</a>
+  <a href="../emails/episode-05.html">Ep 5 · Construction</a>
+  <a href="../emails/episode-06.html">Ep 6 · Safety</a>
+  <a href="../emails/episode-07.html">Ep 7 · Facilities</a>
+  <a href="../emails/episode-08.html">Ep 8 · Office</a>
+  <a href="../emails/episode-09.html">Ep 9 · Logistics</a>
+  <a href="../emails/episode-10.html">Ep 10 · The finale</a>
+</div>
+<p>Production table-based email HTML, generated from <code>data/episodes.mjs</code> by <code>npm run build:emails</code>. Before sending, rebuild with <code>ASSET_BASE</code> pointing at the hosted image base URL and let the ESP replace <code>{{UNSUBSCRIBE_URL}}</code>.</p>
+
+<h2>12 · LinkedIn episode card · 1080×1080</h2>
+<div class="chips">
+  <a href="linkedin-card.html?ep=1">Card 1</a>
+  <a href="linkedin-card.html?ep=2">Card 2</a>
+  <a href="linkedin-card.html?ep=3">Card 3</a>
+  <a href="linkedin-card.html?ep=4">Card 4</a>
+  <a href="linkedin-card.html?ep=5">Card 5</a>
+  <a href="linkedin-card.html?ep=6">Card 6</a>
+  <a href="linkedin-card.html?ep=7">Card 7</a>
+  <a href="linkedin-card.html?ep=8">Card 8</a>
+  <a href="linkedin-card.html?ep=9">Card 9</a>
+  <a href="linkedin-card.html?ep=10">Card 10</a>
+</div>
+<p>PNG exports for all ten episodes live in <code>exports/</code>.</p>
+</body>
+</html>

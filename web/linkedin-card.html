@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXION · If It Exists · LinkedIn episode card 1080×1080</title>
+<link href="../assets/fonts/fonts.css" rel="stylesheet">
+<style>
+  body{margin:0;background:#E9E2DA;font-family:'Archivo',sans-serif;color:#123F6E;padding:56px}
+</style>
+</head>
+<body>
+<div data-export="linkedin-card" style="width:1080px;height:1080px;background:#1C5A9E;display:flex;flex-direction:column;padding:64px;box-sizing:border-box;overflow:hidden;position:relative">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="display:flex;align-items:center;gap:10px"><svg viewBox="0 0 100 100" style="width:52px;height:52px;display:block"><path d="M30 78 L48 22 L52 22 L70 78 L61 78 L50 40 L39 78 Z" fill="#F6F0EA"></path><path d="M80 24 L56 52 L64 52 L54 76 L82 44 L73 44 Z" fill="#E58A2D"></path></svg><div style="font:400 40px 'Anton';color:#F6F0EA;letter-spacing:.04em">AXION</div></div>
+      <div style="width:2px;height:30px;background:#E58A2D"></div>
+      <div style="font:400 30px 'Anton';color:#E58A2D">IF IT EXISTS.</div>
+    </div>
+    <div style="background:#E58A2D;color:#123F6E;font:400 26px 'Anton';padding:10px 20px;letter-spacing:.06em">PROOF <span id="ep-n">3</span>/10</div>
+  </div>
+  <div style="margin-top:auto">
+    <div id="ep-kicker" style="font:700 18px 'Archivo';letter-spacing:.18em;text-transform:uppercase;color:#F6F0EA;margin-bottom:24px"></div>
+    <div style="font:400 180px/0.86 'Anton';color:#F6F0EA"><span id="ep-h1"></span><br><span id="ep-h2" style="color:#E58A2D"></span></div>
+  </div>
+  <div id="ep-items" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:40px"></div>
+  <div style="margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end">
+    <div style="font:400 34px/1 'Anton';color:#F6F0EA">TRY TO STUMP US. <span style="font:800 34px 'Tajawal'">جرّب تغلبنا</span></div>
+    <div style="font:700 20px 'Archivo';color:#F6F0EA">WhatsApp <span style="color:#E58A2D">+20 111 849 6288</span></div>
+  </div>
+</div>
+<script>
+const EPISODES = [{"n":1,"kicker":"The dare","h1":"TRY TO","h2":"STUMP US.","items":["Water chiller","MV cable drum","Fire hose reel","Ergonomic chairs","Rockwool slabs","Toner, 400 units"]},{"n":2,"kicker":"Flow","h1":"KEEP IT","h2":"FLOWING.","items":["Gate & ball valves","Centrifugal pumps","Carbon steel pipe","Flanges DIN / ANSI","Gaskets & packing","Strainers"]},{"n":3,"kicker":"Rotation","h1":"KEEP IT","h2":"TURNING.","items":["SKF · FAG bearings","Timken · NSK bearings","V-belts & timing belts","Gearboxes","Oil seals & O-rings","Couplings"]},{"n":4,"kicker":"Power","h1":"KEEP IT","h2":"POWERED.","items":["LV / MV cables","Circuit breakers","Contactors & relays","VFDs","PLCs & HMIs","Sensors & switches"]},{"n":5,"kicker":"Construction","h1":"BUILD","h2":"IT.","items":["H-beams IPE / HEA","Channels & angles","Rockwool insulation","Waterproofing membranes","Epoxy flooring","Anchors & fasteners"]},{"n":6,"kicker":"Safety","h1":"PROTECT","h2":"EVERYONE.","items":["Safety helmets","Work gloves","Safety shoes","Coveralls","Fall harnesses","Fire extinguishers"]},{"n":7,"kicker":"Facilities","h1":"RUN THE","h2":"FACILITY.","items":["Industrial degreasers","Floor scrubbers","Paper rolls & tissue","Garbage bags","Disinfectants","Mops & trolleys"]},{"n":8,"kicker":"Office","h1":"EQUIP THE","h2":"OFFICE.","items":["Business laptops","Printers & MFPs","Toner & ink","Ergonomic chairs","Desks & workstations","Monitors"]},{"n":9,"kicker":"Logistics","h1":"PACK &","h2":"SHIP.","items":["Stretch film","PP / PET strapping","Packing tapes","Wooden pallets","Export crates","Corner boards"]},{"n":10,"kicker":"The finale","h1":"ONE LIST.","h2":"ONE INVOICE.","items":["Valves","Bearings","Cables","Steel","PPE","Consumables","Office","Packing"]}];
+const n = Math.min(10, Math.max(1, parseInt(new URLSearchParams(location.search).get('ep') || '3', 10) || 3));
+const ep = EPISODES[n - 1];
+document.getElementById('ep-n').textContent = ep.n;
+document.getElementById('ep-kicker').textContent = 'Episode ' + ep.n + ' · ' + ep.kicker;
+document.getElementById('ep-h1').textContent = ep.h1;
+document.getElementById('ep-h2').textContent = ep.h2;
+document.getElementById('ep-items').innerHTML = ep.items.map(function (name) {
+  return '<div style="background:#123F6E;color:#F6F0EA;font:900 20px \'Archivo\';text-transform:uppercase;padding:14px 20px;letter-spacing:.02em">' + name + '</div>';
+}).join('');
+</script>
+</body>
+</html>
